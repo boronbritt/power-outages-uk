@@ -6,6 +6,7 @@ the environment variable "OUTAGE_CONN_STRING", you may need to install some libr
 
 To create the SQL tables you can either run the run.py script as such
 ```bash
+export OUTAGE_CONN_STRING="CONNECTION_STRING_HERE"
 python3 run.py create
 ```
 
