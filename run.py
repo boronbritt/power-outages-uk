@@ -4,15 +4,20 @@ from providers.uk_power_networks import update_uk_power_networks
 from providers.northernpowergrid import update_northern_powergrid
 from providers.electricity_north_west import update_electricity_north_west
 from providers.ss_electricity_networks import update_ss_electricity_networks
+from outage import create_tables
 import sqlalchemy as db
 import os
+import sys
 
 conn_str = os.environ.get("OUTAGE_CONN_STRING")
-
 engine = db.create_engine(conn_str)
-update_sp_energy_networks(engine)
-update_national_grid(engine)
-update_uk_power_networks(engine)
-update_northern_powergrid(engine)
-update_electricity_north_west(engine)
-update_ss_electricity_networks(engine)
+
+if sys.argv[1] == "create":
+    create_tables(engine)
+else:
+    update_sp_energy_networks(engine)
+    update_national_grid(engine)
+    update_uk_power_networks(engine)
+    update_northern_powergrid(engine)
+    update_electricity_north_west(engine)
+    update_ss_electricity_networks(engine)

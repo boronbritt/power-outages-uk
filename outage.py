@@ -117,3 +117,6 @@ def handle_outage(status, postcodes, outage, session):
     finally:
         add_status(status, outage, session)
         return return_postcodes
+
+def create_tables(engine):
+    Base.metadata.create_all(engine)
