@@ -43,6 +43,7 @@ CREATE TABLE public."PowerOutages" (
 ### Usage
 Once this has been setup correctly you can run the script with 
 ```bash
+export OUTAGE_CONN_STRING="CONNECTION_STRING_HERE"
 python3 run.py
 ```
 from this it should be trivial to gather power outage over time using a cronjob or something similar
