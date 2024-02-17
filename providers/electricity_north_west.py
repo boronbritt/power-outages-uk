@@ -1,7 +1,6 @@
 from outage import PowerOutage, parse_nullable_time, handle_outage
 from sqlalchemy.orm import Session
 import requests
-import sqlalchemy as db
 
 url = "https://www.enwl.co.uk/power-outages/search?pageSize=99999&postcodeOrReferenceNumber=&pageNumber=1&includeCurrent=true&includeResolved=false&includeTodaysPlanned=false&includeFuturePlanned=false&includeCancelledPlanned=false"
 
