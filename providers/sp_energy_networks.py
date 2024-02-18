@@ -31,6 +31,7 @@ def update_sp_energy_networks(engine):
             outage = PowerOutage(
                 supplier="sp_energy_networks",
                 reference=row["INCIDENT_REF"],
+                active=2,
                 type=row["INC_TYPE_ID"],
                 start_time=parse_nullable_time(row["CREATION_DATE"]),
                 end_time=parse_nullable_time(row["EST_REST_DATE"]),

@@ -22,6 +22,7 @@ def update_electricity_north_west(engine):
         for row in outages:
             outage = PowerOutage(
                 supplier="electricity_north_west",
+                active=2,
                 customers_affected=row["consumersOff"],
                 reference=row["faultNumber"],
                 type=row["WebTMSFaultType"],

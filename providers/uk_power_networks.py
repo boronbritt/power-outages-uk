@@ -24,6 +24,7 @@ def update_uk_power_networks(engine):
             outage = PowerOutage(
                 supplier="uk_power_networks",
                 customers_affected=row["NoCustomerAffected"],
+                active=2,
                 reference=row["IncidentReference"],
                 type=row["PowerCutType"],
                 start_time=parse_nullable_time(row["CreationDateTime"]),

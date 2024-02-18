@@ -30,6 +30,7 @@ def update_national_grid(engine):
             outage = PowerOutage(
                 supplier="national_grid",
                 customers_affected=row[3],
+                active=2,
                 reference=row[2],
                 type=row[8],
                 start_time=parse_nullable_time(row[10]),

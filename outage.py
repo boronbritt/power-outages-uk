@@ -26,6 +26,7 @@ class PowerOutage(Base):
         "supplier", "reference", name="_reference_constraint"),)
 
     id: Mapped[int] = mapped_column(primary_key=True)
+    active: Mapped[int] = mapped_column()
     customers_affected: Mapped[Optional[int]] = mapped_column()
     start_time: Mapped[Optional[datetime]] = mapped_column(db.DateTime)
     end_time: Mapped[Optional[datetime]] = mapped_column(db.DateTime)
@@ -76,6 +77,7 @@ def update_from_outage(outage, session):
         supplier=outage.supplier,
         customers_affected=outage.customers_affected,
         reference=outage.reference,
+        active=outage.active,
         type=outage.type,
         start_time=outage.start_time,
         end_time=outage.end_time

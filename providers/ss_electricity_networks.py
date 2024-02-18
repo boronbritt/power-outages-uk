@@ -35,6 +35,7 @@ def update_ss_electricity_networks(engine):
             outage = PowerOutage(
                 supplier="ss_electricity_networks",
                 customers_affected=get_customer_count(row),
+                active=2,
                 reference=row["reference"],
                 type=row["type"],
                 start_time=get_start_time(row),

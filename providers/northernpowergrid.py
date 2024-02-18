@@ -32,6 +32,7 @@ def update_northern_powergrid(engine):
             outage = PowerOutage(
                 supplier="northern_powergrid",
                 customers_affected=row["TotalConfirmedPowercut"],
+                active=2,
                 reference=row["Reference"],
                 type=row["Type"],
                 start_time=parse_nullable_time(row["InsertDate"]),
