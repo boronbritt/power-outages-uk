@@ -30,6 +30,7 @@ CREATE TABLE public."PowerOutageStatus" (
 
 CREATE TABLE public."PowerOutages" (
 	id serial4 NOT NULL,
+	active int4 NULL,
 	customers_affected int4 NULL,
 	start_time timestamp NULL,
 	end_time timestamp NULL,
