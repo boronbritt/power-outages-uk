@@ -37,7 +37,7 @@ def update_national_grid(engine):
                 end_time=parse_nullable_time(row[10]),
             )
 
-            postcodes.extend(handle_outage(row[6], row[15].split(","), outage, session))
+            postcodes.extend(handle_outage(row[6], row[15].split(", "), outage, session))
 
         # Add to database
         session.add_all(postcodes)
